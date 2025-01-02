@@ -22,4 +22,5 @@ jobs:
           script: |
             chmod +x ./test.sh
             ./test.sh
+            echo "deploy finished"
          
