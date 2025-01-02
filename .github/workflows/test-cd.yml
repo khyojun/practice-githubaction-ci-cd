@@ -36,18 +36,18 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/practice:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/practice:latest
   deploy:
-      name: executing remote ssh commands
-      runs-on: ubuntu-latest
+    needs: build
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: deploy appleboy
-          uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            key: ${{ secrets.SSH_KEY }}
-            port: ${{ secrets.PORT }}
-            script: |
-              docker pull ${{ secrets.DOCKER_USERNAME }}/practice:latest
-              echo "now finished" > finished.txt
+    steps:
+      - name: deploy appleboy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/practice:latest
+            echo "now finished" > finished.txt
          
