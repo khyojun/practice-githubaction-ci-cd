@@ -48,6 +48,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
+            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
             docker pull ${{ secrets.DOCKER_USERNAME }}/practice:latest
             echo "now finished" > finished.txt
          
