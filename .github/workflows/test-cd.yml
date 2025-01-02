@@ -1,0 +1,25 @@
+name: Gongbaek CD
+
+
+on:
+  pull_request:
+    branches: [ "main"]
+
+
+jobs:
+  deploy:
+    name: Deploy to Ec2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: executing remote ssh commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            chmod +x ./test.sh
+            ./test.sh
+         
