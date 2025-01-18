@@ -5,7 +5,6 @@ on:
   workflow_run:
     workflows: ["TEST-REPORT CI"]
     types: [completed]
-    branches: [test]
 
 jobs:
   build:
