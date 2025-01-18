@@ -35,5 +35,10 @@ jobs:
           name: build-results
           path: build/libs/*.jar  # 빌드된 결과물 저장gkrl
 
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-results  # CI에서 업로드한 아티팩트 이름과 동일
+
 
 
