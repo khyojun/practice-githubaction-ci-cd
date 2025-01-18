@@ -31,4 +31,4 @@ jobs:
 
       - name: Debug workflow event
         run:
-            echo "Workflow run triggered for branch: ${{ github.ref }}"
+            echo "Workflow run triggered for branchw: ${{ github.ref }}"
