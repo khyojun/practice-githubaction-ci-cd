@@ -4,7 +4,8 @@ name: BUILD CI
 on:
   workflow_run:
     workflows: ["TEST-REPORT CI"]
-    types: [completed]
+    types: [success]
+    branches: [test]
 
 
 jobs:
