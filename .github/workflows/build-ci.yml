@@ -6,7 +6,7 @@ on:
     workflows: ["TEST-REPORT CI"]
     types: [success]
     branches: [test]
-
+  workflow_dispatch:
 
 jobs:
   build:
