@@ -5,9 +5,8 @@ on:
     workflows:
       - BUILD-CI  # CI 워크플로 이름
     types:
-      - success
-    branches:
-      - main
+      - completed
+
 
 
 jobs:
@@ -15,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug workflow event
+        run: 'echo "Workflow run triggered for branch: ${{ github.ref }}"'
       - name: deploy appleboy
         uses: appleboy/ssh-action@master
         with:
