@@ -4,13 +4,12 @@ name: BUILD CI
 on:
   workflow_run:
     workflows: ["TEST-REPORT CI"]
-    types: [requested]
+    types: [completed]
     branches: [test]
-  workflow_dispatch:
 
 jobs:
   build:
-    name: Build Docker image and Push hello
+    name: Build Docker image and Push
     runs-on: ubuntu-latest
 
     steps:
