@@ -6,7 +6,7 @@ on:
     workflows:
       - TEST-REPORT CI  # CI 워크플로 이름
     types:
-      - completed
+      - success
 
 
 
