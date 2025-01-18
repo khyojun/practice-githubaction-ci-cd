@@ -5,6 +5,8 @@ on:
   workflow_run:
     workflows: ["TEST-REPORT CI"]
     types: [completed]
+    branches: [test]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -39,6 +41,4 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-results  # CI에서 업로드한 아티팩트 이름과 동일qwer
-
-
 
