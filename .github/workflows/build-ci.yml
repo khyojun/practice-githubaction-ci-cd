@@ -3,40 +3,12 @@ name: BUILD CI
 
 on:
   workflow_run:
-    workflows:
-      - TEST-REPORT CI  # CI 워크플로 이름
-    types:
-      - success
-    branches:
-      - main
-
+    workflows: ["TEST-REPORT CI"]
+    types: [completed]
+    branches: [test]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Jdk 21
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Test with Gradle
-        run: ./gradlew --info test
-
-      - name: Publish Test Results
-        uses : EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          junit_files: '**/build/test-results/test/TEST-*.xml'
-
   build:
-    needs:
-      - test
     name: Build Docker image and Push
     runs-on: ubuntu-latest
 
