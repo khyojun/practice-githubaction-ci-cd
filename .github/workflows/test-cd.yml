@@ -1,14 +1,11 @@
-name: Gongbaek CD
+name: CD
 
 on:
   workflow_run:
     workflows:
-      - Gongbaek CI  # CI 워크플로 이름
+      - BUILD-CI  # CI 워크플로 이름
     types:
       - completed
-
-  pull_request:
-    branches: [ "main"]
 
 
 jobs:
@@ -26,5 +23,4 @@ jobs:
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
             docker pull ${{ secrets.DOCKER_USERNAME }}/practice:latest
-            echo "now finished" > finished.txt
-         
+            echo "now finished deploy: $(date '+%Y-%m-%d %H:%M:%S')" > finished.txt         
