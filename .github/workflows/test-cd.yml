@@ -3,7 +3,7 @@ name: Gongbaek CD
 on:
   workflow_run:
     workflows:
-      - [Gongbaek CI]  # CI 워크플로 이름
+      - Gongbaek CI  # CI 워크플로 이름
     types:
       - completed
 
@@ -13,7 +13,6 @@ on:
 
 jobs:
   deploy:
-    needs: build
     runs-on: ubuntu-latest
 
     steps:
