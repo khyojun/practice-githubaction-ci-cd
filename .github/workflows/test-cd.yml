@@ -6,6 +6,8 @@ on:
       - BUILD-CI  # CI 워크플로 이름
     types:
       - completed
+  pull_request:
+    branches: [ "main" ]
 
 
 jobs:
