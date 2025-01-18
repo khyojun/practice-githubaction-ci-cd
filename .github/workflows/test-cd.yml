@@ -5,7 +5,7 @@ on:
     workflows:
       - BUILD-CI  # CI 워크플로 이름
     types:
-      - success
+      - completed
     branches:
       - main
 
