@@ -41,5 +41,5 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-results  # CI에서 업로드한 아티팩트 이름과 동일qwer
-          path: build/libs/*.jar  # 빌드된 결과물 저장
+          path: build/libs/*.jar  # 빌드된 결과물 저장ww
 
