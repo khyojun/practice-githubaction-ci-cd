@@ -27,5 +27,5 @@ jobs:
         uses : EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          junit_files: '**/build/test-results/test/TEST-*.xml' # hello
+          junit_files: '**/build/test-results/test/TEST-*.xml' # hello qwer
 
