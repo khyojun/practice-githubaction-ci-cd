@@ -5,6 +5,8 @@ on:
   workflow_run:
     workflows: ["TEST-REPORT CI"]
     types: [completed]
+    branches: [test]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -34,6 +36,4 @@ jobs:
         with:
           name: build-results
           path: build/libs/*.jar  # 빌드된 결과물 저장
-
-
 
