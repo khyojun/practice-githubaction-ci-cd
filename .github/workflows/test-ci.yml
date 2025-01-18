@@ -28,6 +28,3 @@ jobs:
         if: always()
         with:
           junit_files: '**/build/test-results/test/TEST-*.xml'
-
-      - name: Debug workflow event
-        run: 'echo "Workflow run triggered for branchw: ${{ github.ref }}"'
