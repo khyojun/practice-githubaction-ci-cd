@@ -3,7 +3,7 @@ name: CD
 on:
   workflow_run:
     workflows:
-      - BUILD-CI  # CI 워크플로 이름
+      - BUILD CI  # CI 워크플로 이름
     types:
       - completed
 
