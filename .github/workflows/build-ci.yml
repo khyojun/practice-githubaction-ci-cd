@@ -2,14 +2,11 @@ name: BUILD CI
 
 
 on:
-  pull_request:
-    branches:
-      - main
   workflow_run:
     workflows:
-      - TEST-REPORT CI  # CI 워크플로 이름
+      - ["TEST-REPORT CI"]  # CI 워크플로 이름
     types:
-      - success
+      - completed
 
 
 
