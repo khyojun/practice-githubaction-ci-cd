@@ -8,6 +8,8 @@ on:
 
 jobs:
   build:
+    needs:
+      - test
     name: Build Docker image and Push
     runs-on: ubuntu-latest
 
