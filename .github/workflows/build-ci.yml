@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-results
-          path: build/libs/*.jar  # 빌드된 결과물 저장
+          path: build/libs/*.jar  # 빌드된 결과물 저장gkrl
 
 
 
